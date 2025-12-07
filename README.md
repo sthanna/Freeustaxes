@@ -7,7 +7,7 @@
 
 ## What is FreeUsTaxes?
 
-UsTaxes is a free, open-source tax filing application that can be used to file the Federal 1040 form. It is available in both [web](https://ustaxes.org/) and [desktop][desktop-releases] versions. It is provided free of charge and requires no sharing of personal data.
+FreeUsTaxes is a free, open-source tax filing application that can be used to file the Federal 1040 form. It is available in both [web](https://ustaxes.org/) and [desktop][desktop-releases] versions. It is provided free of charge and requires no sharing of personal data.
 
 **Interested in contributing? [Get Started](#user-content-get-started)**
 
@@ -149,9 +149,9 @@ Please reach out to us on our [discord][discord-url] if you run into any problem
 [cargo-docs]: https://doc.rust-lang.org/cargo/getting-started/installation.html
 [discord-badge]: https://img.shields.io/discord/812156892343828500?logo=Discord
 [discord-url]: https://discord.gg/dAaz472mPz
-[github-release]: https://github.com/ustaxes/UsTaxes/releases/latest
-[release-badge]: https://badgen.net/github/release/ustaxes/ustaxes
-[desktop-releases]: https://github.com/ustaxes/UsTaxes/releases/
-[github-issues]: https://github.com/ustaxes/ustaxes/issues
+[github-release]: https://github.com///releases/latest
+[release-badge]: https://badgen.net/github/release//
+[desktop-releases]: https://github.com///releases/
+[github-issues]: https://github.com///issues
 [tauri-setup]: https://tauri.studio/en/docs/getting-started/intro/#setting-up-your-environment
 [tauri-root]: https://tauri.studio
