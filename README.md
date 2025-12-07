@@ -7,7 +7,7 @@
 
 ## What is FreeUsTaxes?
 
-FreeUsTaxes is a free, open-source tax filing application that can be used to file the Federal 1040 form. It is available in both [web](https://ustaxes.org/) and [desktop][desktop-releases] versions. It is provided free of charge and requires no sharing of personal data.
+FreeUsTaxes is a free, open-source tax filing application that can be used to file the Federal 1040 form. It is available in both [web](https://ustaxes.org/) and [desktop][desktop-releases] versions. It is provided free of charge and requires no sharing of personal data. FreeUsTaxes is build upon UsTaxes platform covering state tax filing for major states. 
 
 **Interested in contributing? [Get Started](#user-content-get-started)**
 
