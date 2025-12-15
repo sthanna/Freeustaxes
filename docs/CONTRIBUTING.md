@@ -8,8 +8,7 @@ Before contributing please make sure to take a moment to read through the [Code 
 
 ## Maintaining team
 
-- [Aidan Grimshaw](http://github.com/thegrims)
-- [Zak Patterson](http://github.com/zakpatterson)
+- Sandeep Thanna 
 
 ## Issue Reporting Guidelines
 
