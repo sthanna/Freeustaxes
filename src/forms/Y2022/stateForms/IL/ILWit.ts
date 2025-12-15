@@ -1,8 +1,8 @@
-import Form, { FormMethods } from 'ustaxes/core/stateForms/Form'
+import Form, { FormMethods } from 'freeustaxes/core/stateForms/Form'
 import F1040 from '../../irsForms/F1040'
-import { Field } from 'ustaxes/core/pdfFiller'
-import { IncomeW2, PersonRole, State } from 'ustaxes/core/data'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { Field } from 'freeustaxes/core/pdfFiller'
+import { IncomeW2, PersonRole, State } from 'freeustaxes/core/data'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 
 type FormType =
   | 'W' // W-2

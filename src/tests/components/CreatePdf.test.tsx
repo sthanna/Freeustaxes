@@ -1,15 +1,15 @@
 import { waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ReactElement } from 'react'
-import CreatePDF from 'ustaxes/components/CreatePDF'
-import { Information } from 'ustaxes/core/data'
-import { F1040Error } from 'ustaxes/forms/errors'
-import { blankState } from 'ustaxes/redux/reducer'
+import CreatePDF from 'freeustaxes/components/CreatePDF'
+import { Information } from 'freeustaxes/core/data'
+import { F1040Error } from 'freeustaxes/forms/errors'
+import { blankState } from 'freeustaxes/redux/reducer'
 import { FakePagerProvider, PagerMethods } from '../common/FakePager'
-import * as arbitraries from 'ustaxes/core/tests/arbitraries'
+import * as arbitraries from 'freeustaxes/core/tests/arbitraries'
 import * as fc from 'fast-check'
 import TestPage from '../common/Page'
-import { blankYearTaxesState, YearsTaxesState } from 'ustaxes/redux'
+import { blankYearTaxesState, YearsTaxesState } from 'freeustaxes/redux'
 
 afterEach(async () => {
   await waitFor(() => localStorage.clear())

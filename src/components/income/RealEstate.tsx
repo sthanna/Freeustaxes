@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import { Message, useForm, useWatch, FormProvider } from 'react-hook-form'
-import { useDispatch } from 'ustaxes/redux'
-import { useYearSelector } from 'ustaxes/redux/yearDispatch'
+import { useDispatch } from 'freeustaxes/redux'
+import { useYearSelector } from 'freeustaxes/redux/yearDispatch'
 import { useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
 
@@ -9,8 +9,8 @@ import {
   addProperty,
   editProperty,
   removeProperty
-} from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
+} from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
 import {
   Property,
   Address,
@@ -20,19 +20,19 @@ import {
   PropertyTypeName,
   TaxYear,
   TaxYears
-} from 'ustaxes/core/data'
-import { YearsTaxesState } from 'ustaxes/redux'
-import AddressFields from 'ustaxes/components/TaxPayer/Address'
+} from 'freeustaxes/core/data'
+import { YearsTaxesState } from 'freeustaxes/redux'
+import AddressFields from 'freeustaxes/components/TaxPayer/Address'
 import {
   Currency,
   GenericLabeledDropdown,
   LabeledCheckbox,
   LabeledInput
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { daysInYear, enumKeys, intentionallyFloat } from 'ustaxes/core/util'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { daysInYear, enumKeys, intentionallyFloat } from 'freeustaxes/core/util'
 import { HouseOutlined } from '@material-ui/icons'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
 import { Grid } from '@material-ui/core'
 import _ from 'lodash'
 
@@ -187,9 +187,9 @@ export default function RealEstate(): ReactElement {
 
   const onEditProperty =
     (index: number) =>
-    (formData: PropertyAddForm): void => {
-      dispatch(editProperty({ value: toProperty(formData), index }))
-    }
+      (formData: PropertyAddForm): void => {
+        dispatch(editProperty({ value: toProperty(formData), index }))
+      }
 
   const expenseFields: ReactElement[] = enumKeys(PropertyExpenseType).map(
     (k, i) => (

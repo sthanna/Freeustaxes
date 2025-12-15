@@ -2,13 +2,13 @@ import { ReactElement, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { FormProvider, useForm } from 'react-hook-form'
 import _ from 'lodash'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
 
 import {
   savePrimaryPersonInfo,
   saveStateResidencyInfo,
   saveContactInfo
-} from 'ustaxes/redux/actions'
+} from 'freeustaxes/redux/actions'
 import {
   Address,
   ContactInfo,
@@ -17,18 +17,18 @@ import {
   State,
   StateResidency,
   TaxPayer
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 import { PersonFields } from './PersonFields'
-import { usePager } from 'ustaxes/components/pager'
+import { usePager } from 'freeustaxes/components/pager'
 import {
   LabeledCheckbox,
   USStateDropDown,
   LabeledInput
-} from 'ustaxes/components/input'
+} from 'freeustaxes/components/input'
 import AddressFields from './Address'
 import { Grid } from '@material-ui/core'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 interface TaxPayerUserForm {
   firstName: string
@@ -111,12 +111,12 @@ export default function PrimaryTaxpayer(): ReactElement {
     ...defaultTaxpayerUserForm,
     ...(taxPayer.primaryPerson !== undefined
       ? {
-          ...asTaxPayerUserForm(taxPayer.primaryPerson),
-          contactPhoneNumber: taxPayer.contactPhoneNumber,
-          contactEmail: taxPayer.contactEmail,
-          stateResidency:
-            stateResidency[0]?.state ?? taxPayer.primaryPerson.address.state
-        }
+        ...asTaxPayerUserForm(taxPayer.primaryPerson),
+        contactPhoneNumber: taxPayer.contactPhoneNumber,
+        contactEmail: taxPayer.contactEmail,
+        stateResidency:
+          stateResidency[0]?.state ?? taxPayer.primaryPerson.address.state
+      }
       : {})
   }
 

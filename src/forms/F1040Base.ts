@@ -12,9 +12,9 @@ import {
   ScheduleK1Form1065,
   Supported1099,
   TaxPayer
-} from 'ustaxes/core/data'
-import Form from 'ustaxes/core/irsForms/Form'
-import { Either, left, right } from 'ustaxes/core/util'
+} from 'freeustaxes/core/data'
+import Form from 'freeustaxes/core/irsForms/Form'
+import { Either, left, right } from 'freeustaxes/core/util'
 import { F1040Error } from './errors'
 
 export type ValidatedTaxpayer = TaxPayer & {

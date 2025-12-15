@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from '@material-ui/core'
 import { ChangeEvent, PropsWithChildren, ReactElement } from 'react'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 interface LoadProps<S> {
   handleData: (s: S) => void

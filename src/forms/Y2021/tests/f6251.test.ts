@@ -1,10 +1,10 @@
 /* eslint @typescript-eslint/no-empty-function: "off" */
 
-import { FilingStatus, PersonRole } from 'ustaxes/core/data'
+import { FilingStatus, PersonRole } from 'freeustaxes/core/data'
 import F1040 from '../irsForms/F1040'
 import F6251 from '../irsForms/F6251'
 import { cloneDeep } from 'lodash'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 
 const baseInformation: ValidatedInformation = {
   f1099s: [],

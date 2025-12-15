@@ -1,13 +1,13 @@
 import { ReactElement, ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm, FormProvider } from 'react-hook-form'
-import { TaxesState, useSelector, useDispatch } from 'ustaxes/redux'
+import { TaxesState, useSelector, useDispatch } from 'freeustaxes/redux'
 import {
   addScheduleK1Form1065,
   editScheduleK1Form1065,
   removeScheduleK1Form1065
-} from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
+} from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
 import {
   boxLabel,
   LabeledInput,
@@ -15,9 +15,9 @@ import {
   formatSSID,
   LabeledCheckbox,
   formatEIN
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
 import { Grid, Box } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { Business } from '@material-ui/icons'
@@ -29,8 +29,8 @@ import {
   PersonRole,
   PrimaryPerson,
   Spouse
-} from 'ustaxes/core/data'
-import { intentionallyFloat } from 'ustaxes/core/util'
+} from 'freeustaxes/core/data'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 interface ScheduleK1Form1065UserInput {
   personRole: PersonRole.PRIMARY | PersonRole.SPOUSE
@@ -167,12 +167,12 @@ export const PartnershipIncome = (): ReactElement => {
 
   const onSubmitEdit =
     (index: number) =>
-    (formData: ScheduleK1Form1065UserInput): void => {
-      const payload = toScheduleK1Form1065(formData)
-      if (payload !== undefined) {
-        dispatch(editScheduleK1Form1065({ value: payload, index }))
+      (formData: ScheduleK1Form1065UserInput): void => {
+        const payload = toScheduleK1Form1065(formData)
+        if (payload !== undefined) {
+          dispatch(editScheduleK1Form1065({ value: payload, index }))
+        }
       }
-    }
 
   const form: ReactElement | undefined = (
     <FormListContainer<ScheduleK1Form1065UserInput>

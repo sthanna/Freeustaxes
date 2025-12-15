@@ -6,7 +6,7 @@ import {
   PersonRole,
   PlanType1099,
   Asset
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 import federalBrackets, { CURRENT_YEAR } from '../data/federal'
 import F1040V from './F1040v'
 import F2441 from './F2441'
@@ -39,8 +39,8 @@ import ScheduleD from './ScheduleD'
 import ScheduleE from './ScheduleE'
 import ScheduleEIC from './ScheduleEIC'
 import ScheduleR from './ScheduleR'
-import Form, { FormTag } from 'ustaxes/core/irsForms/Form'
-import { sumFields } from 'ustaxes/core/irsForms/util'
+import Form, { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
 import { computeOrdinaryTax } from './TaxTable'
 import SDQualifiedAndCapGains from './worksheets/SDQualifiedAndCapGains'
 import ChildTaxCreditWorksheet from './worksheets/ChildTaxCreditWorksheet'
@@ -51,9 +51,9 @@ import F8949 from './F8949'
 import F4137 from './F4137'
 import F8919 from './F8919'
 import F8582 from './F8582'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 import Form8853 from './F8853'
-import F1040Base, { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import F1040Base, { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 import F1040Attachment from './F1040Attachment'
 
 export default class F1040 extends F1040Base {

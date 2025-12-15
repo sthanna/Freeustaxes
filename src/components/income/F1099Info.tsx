@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import Alert from '@material-ui/lab/Alert'
 import { useForm, FormProvider } from 'react-hook-form'
 import { Icon, Grid } from '@material-ui/core'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
-import { add1099, edit1099, remove1099 } from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
+import { add1099, edit1099, remove1099 } from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
 import {
   Person,
   PersonRole,
@@ -14,17 +14,17 @@ import {
   Income1099Type,
   PlanType1099,
   PlanType1099Texts
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 import {
   Currency,
   formatSSID,
   GenericLabeledDropdown,
   LabeledInput,
   boxLabel
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
-import { intentionallyFloat } from 'ustaxes/core/util'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 const showIncome = (a: Supported1099): ReactElement => {
   switch (a.type) {
@@ -245,12 +245,12 @@ export default function F1099Info(): ReactElement {
 
   const onSubmitEdit =
     (index: number) =>
-    (formData: F1099UserInput): void => {
-      const payload = toF1099(formData)
-      if (payload !== undefined) {
-        dispatch(edit1099({ value: payload, index }))
+      (formData: F1099UserInput): void => {
+        const payload = toF1099(formData)
+        if (payload !== undefined) {
+          dispatch(edit1099({ value: payload, index }))
+        }
       }
-    }
 
   const people: Person[] = useSelector((state: TaxesState) => [
     state.information.taxPayer.primaryPerson,

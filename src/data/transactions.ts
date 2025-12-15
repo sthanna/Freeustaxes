@@ -1,4 +1,4 @@
-import { Either, left, pure, right } from 'ustaxes/core/util'
+import { Either, left, pure, right } from 'freeustaxes/core/util'
 
 export interface Security {
   name: string

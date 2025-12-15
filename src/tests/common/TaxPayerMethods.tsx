@@ -1,7 +1,7 @@
 import { within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ReactElement } from 'react'
-import TaxPayer from 'ustaxes/components/TaxPayer'
+import TaxPayer from 'freeustaxes/components/TaxPayer'
 import DomMethods from './DomMethods'
 
 export default class TaxPayerMethods extends DomMethods {

@@ -4,9 +4,9 @@ import {
   LabeledCheckbox,
   LabeledInput,
   USStateDropDown
-} from 'ustaxes/components/input'
-import { CountryDropDown } from 'ustaxes/components/input/LabeledDropdown'
-import { Patterns } from 'ustaxes/components/Patterns'
+} from 'freeustaxes/components/input'
+import { CountryDropDown } from 'freeustaxes/components/input/LabeledDropdown'
+import { Patterns } from 'freeustaxes/components/Patterns'
 
 interface AddressProps {
   autofocus?: boolean

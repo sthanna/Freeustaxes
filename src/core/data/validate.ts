@@ -3,7 +3,7 @@
 import { DefinedError, ValidateFunction } from 'ajv'
 import log from '../log'
 import * as fns from './validate-fns'
-import * as types from 'ustaxes/core/data'
+import * as types from 'freeustaxes/core/data'
 
 // We will simply throw a runtime error if the data does not
 // validate against the schema.definitions.

@@ -1,9 +1,9 @@
 import F8995, { getF8995PhaseOutIncome } from './F8995'
 
-import { FormTag } from 'ustaxes/core/irsForms/Form'
-import { FilingStatus } from 'ustaxes/core/data'
-import { sumFields } from 'ustaxes/core/irsForms/util'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { FilingStatus } from 'freeustaxes/core/data'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 function ifNumber(
   num: number | undefined,

@@ -10,8 +10,8 @@ export const enumKeys = <A extends object>(a: A): Array<keyof typeof a> =>
 
 export const linear =
   (m: number, b: number) =>
-  (x: number): number =>
-    b + m * x
+    (x: number): number =>
+      b + m * x
 
 // Lower bound, and function to apply above that bound.
 interface Piece {
@@ -140,10 +140,10 @@ export const isWeb = (): boolean => !isDesktop()
 
 const fixDecimals =
   (n: number) =>
-  (x: number): number => {
-    const mul = Math.pow(10, n)
-    return Math.round(x * mul) / mul
-  }
+    (x: number): number => {
+      const mul = Math.pow(10, n)
+      return Math.round(x * mul) / mul
+    }
 
 export const fix2 = fixDecimals(2)
 export const fix0 = (n: number): number => Math.round(n)
@@ -170,26 +170,27 @@ export const parseFormNumberOrThrow = (x: string | undefined): number => {
 }
 
 export const numberOfDaysBetween = (d1: Date, d2: Date): number => {
-  const [start, end] = [d1, d2].map((d) =>
+  const [start, end] = [d1, d2].map((d) => {
     // Ignore time part if it exists.
-    new Date(d.toISOString().slice(0, 10)).getTime()
-  )
+    const dateStr = d instanceof Date && !isNaN(d.getTime()) ? d.toISOString() : ((d as unknown) as string)
+    return new Date(dateStr.slice(0, 10)).getTime()
+  })
   return Math.abs(end - start) / 1000 / 60 / 60 / 24
 }
 
 export const nextMultipleOf =
   (mul: number) =>
-  (value: number): number => {
-    const v = Math.round(value)
-    // Just return the highest possible value divisible by mul
-    // if we're above this number (~9E15)
-    // Above that mod cannot be expected to return correct results
-    if (v > Number.MAX_SAFE_INTEGER - mul) {
-      return Number.MAX_SAFE_INTEGER - (Number.MAX_SAFE_INTEGER % mul)
-    }
+    (value: number): number => {
+      const v = Math.round(value)
+      // Just return the highest possible value divisible by mul
+      // if we're above this number (~9E15)
+      // Above that mod cannot be expected to return correct results
+      if (v > Number.MAX_SAFE_INTEGER - mul) {
+        return Number.MAX_SAFE_INTEGER - (Number.MAX_SAFE_INTEGER % mul)
+      }
 
-    return Math.ceil(v / mul) * mul
-  }
+      return Math.ceil(v / mul) * mul
+    }
 
 export const nextMultipleOf1000 = nextMultipleOf(1000)
 

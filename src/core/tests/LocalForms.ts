@@ -1,8 +1,8 @@
 import { PDFDocument } from 'pdf-lib'
-import { PDFDownloader } from 'ustaxes/core/pdfFiller/pdfHandler'
+import { PDFDownloader } from 'freeustaxes/core/pdfFiller/pdfHandler'
 import fs from 'fs'
 import path from 'path'
-import { TaxYear } from 'ustaxes/core/data'
+import { TaxYear } from 'freeustaxes/core/data'
 
 const localPath = (url: string) => path.join(__dirname, '../../../public', url)
 

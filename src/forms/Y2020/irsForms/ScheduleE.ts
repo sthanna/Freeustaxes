@@ -3,12 +3,12 @@ import {
   Property,
   PropertyType,
   PropertyExpenseTypeName
-} from 'ustaxes/core/data'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
-import { displayNegPos, sumFields } from 'ustaxes/core/irsForms/util'
+} from 'freeustaxes/core/data'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { displayNegPos, sumFields } from 'freeustaxes/core/irsForms/util'
 import _ from 'lodash'
 import F1040Attachment from './F1040Attachment'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 type Cell = number | undefined
 export type MatrixRow = [Cell, Cell, Cell]

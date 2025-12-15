@@ -1,5 +1,5 @@
-import CommonTests, { FormTestInfo } from 'ustaxes/forms/tests/CommonTests'
-import TestKit from 'ustaxes/forms/tests/TestKit'
+import CommonTests, { FormTestInfo } from 'freeustaxes/forms/tests/CommonTests'
+import TestKit from 'freeustaxes/forms/tests/TestKit'
 import F1040 from '../irsForms/F1040'
 
 export const testKit = new TestKit('Y2021')

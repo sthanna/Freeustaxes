@@ -1,5 +1,5 @@
-import { FilingStatus } from 'ustaxes/core/data'
-import { sumFields } from 'ustaxes/core/irsForms/util'
+import { FilingStatus } from 'freeustaxes/core/data'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
 import { SSBenefits } from '../../data/federal'
 import { Worksheet } from '../F1040Attachment'
 

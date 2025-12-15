@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import { FieldValues, Path, RegisterOptions } from 'react-hook-form'
-import { PatternConfig } from 'ustaxes/components/Patterns'
+import { PatternConfig } from 'freeustaxes/components/Patterns'
 import { GridSize } from '@material-ui/core/Grid'
 export interface BaseDropdownProps<TFormValues> {
   label: string | ReactElement

@@ -1,17 +1,17 @@
 import { ReactElement, ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm, FormProvider } from 'react-hook-form'
-import { TaxesState, useSelector, useDispatch } from 'ustaxes/redux'
-import { addF3921, editF3921, removeF3921 } from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
+import { TaxesState, useSelector, useDispatch } from 'freeustaxes/redux'
+import { addF3921, editF3921, removeF3921 } from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
 import {
   LabeledInput,
   GenericLabeledDropdown,
   formatSSID
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
-import { Currency } from 'ustaxes/components/input'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
+import { Currency } from 'freeustaxes/components/input'
 import { Grid, Box } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { ShowChartOutlined as StockIcon } from '@material-ui/icons'
@@ -23,8 +23,8 @@ import {
   PersonRole,
   PrimaryPerson,
   Spouse
-} from 'ustaxes/core/data'
-import { intentionallyFloat } from 'ustaxes/core/util'
+} from 'freeustaxes/core/data'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 interface F3921UserInput {
   name: string
@@ -102,12 +102,12 @@ export const StockOptions = (): ReactElement => {
 
   const onSubmitEdit =
     (index: number) =>
-    (formData: F3921UserInput): void => {
-      const payload = toF3921(formData)
-      if (payload !== undefined) {
-        dispatch(editF3921({ value: payload, index }))
+      (formData: F3921UserInput): void => {
+        const payload = toF3921(formData)
+        if (payload !== undefined) {
+          dispatch(editF3921({ value: payload, index }))
+        }
       }
-    }
 
   const form: ReactElement | undefined = (
     <FormListContainer<F3921UserInput>

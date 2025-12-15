@@ -1,8 +1,8 @@
-import { sumFields } from 'ustaxes/core/irsForms/util'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
 import { netInvestmentIncomeTax } from '../data/federal'
 import F1040Attachment from './F1040Attachment'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 export default class F8960 extends F1040Attachment {
   tag: FormTag = 'f8960'

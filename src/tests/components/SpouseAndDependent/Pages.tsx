@@ -3,11 +3,11 @@ import {
   AddDependentForm,
   FilingStatusDropdown,
   SpouseInfo
-} from 'ustaxes/components/TaxPayer/SpouseAndDependent'
-import YearStatusBar from 'ustaxes/components/YearStatusBar'
-import { YearsTaxesState } from 'ustaxes/redux'
-import TestPage from 'ustaxes/tests/common/Page'
-import YearStatusBarMethods from 'ustaxes/tests/common/YearsStatusBarMethods'
+} from 'freeustaxes/components/TaxPayer/SpouseAndDependent'
+import YearStatusBar from 'freeustaxes/components/YearStatusBar'
+import { YearsTaxesState } from 'freeustaxes/redux'
+import TestPage from 'freeustaxes/tests/common/Page'
+import YearStatusBarMethods from 'freeustaxes/tests/common/YearsStatusBarMethods'
 import { DependentMethods, SpouseMethods, FilingStatusMethods } from './Methods'
 
 export class SpouseTestPage extends TestPage {

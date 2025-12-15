@@ -17,7 +17,7 @@ import {
 import GitHubIcon from '@material-ui/icons/GitHub'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import { HelpOutlineRounded, Settings } from '@material-ui/icons'
-import Urls from 'ustaxes/data/urls'
+import Urls from 'freeustaxes/data/urls'
 
 const drawerWidth = 240
 
@@ -133,7 +133,7 @@ function ResponsiveDrawer(props: DrawerItemsProps): ReactElement {
             color="secondary"
             aria-label="github, opens in new tab"
             component="a"
-            href={`https://github.com/ustaxes/UsTaxes`}
+            href={`https://github.com/sthanna/Freeustaxes`}
             target="_blank"
             rel="noreferrer noopener"
           >

@@ -5,7 +5,7 @@ import {
   Transaction,
   processTransaction,
   Security
-} from 'ustaxes/data/transactions'
+} from 'freeustaxes/data/transactions'
 
 describe('Transactions', () => {
   test('For any portfolio, selling a security not held throws', () => {

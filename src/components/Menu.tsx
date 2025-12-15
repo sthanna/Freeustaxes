@@ -34,7 +34,9 @@ import ItemizedDeductions from './deductions/ItemizedDeductions'
 import Questions from './Questions'
 import HelpAndFeedback from './HelpAndFeedback'
 import UserSettings from './UserSettings'
-import Urls from 'ustaxes/data/urls'
+import Urls from 'freeustaxes/data/urls'
+import StateTaxes from './StateTaxes'
+import CleanAllData from './CleanAllData'
 
 import { isMobileOnly as isMobile } from 'react-device-detect'
 import HealthSavingsAccounts from './savingsAccounts/healthSavingsAccounts'
@@ -42,9 +44,9 @@ import IRA from './savingsAccounts/IRA'
 import OtherInvestments from './income/OtherInvestments'
 import { StockOptions } from './income/StockOptions'
 import { PartnershipIncome } from './income/PartnershipIncome'
-import { TaxYear } from 'ustaxes/core/data'
+import { TaxYear } from 'freeustaxes/core/data'
 import { AdvanceChildTaxCredit } from './Y2021/AdvanceChildTaxCredit'
-import { YearsTaxesState } from 'ustaxes/redux'
+import { YearsTaxesState } from 'freeustaxes/redux'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -171,11 +173,23 @@ export const drawerSections: Section[] = [
     ]
   },
   {
+    title: 'State Taxes',
+    items: [
+      item('State Filing', Urls.stateTaxes, <StateTaxes />)
+    ]
+  },
+  {
     title: 'Results',
     items: [
       item('Refund Information', Urls.refund, <RefundBankAccount />),
       item('Informational Questions', Urls.questions, <Questions />),
       item('Review and Print', Urls.createPdf, <CreatePDF />)
+    ]
+  },
+  {
+    title: 'System',
+    items: [
+      item('Clean All', Urls.clean, <CleanAllData />)
     ]
   }
 ]

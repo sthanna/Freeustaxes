@@ -1,6 +1,6 @@
 import Fill from '../pdfFiller/Fill'
 import { IncomeW2, State } from '../data'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 
 /**
  * Represents a state's income tax form, or schedule

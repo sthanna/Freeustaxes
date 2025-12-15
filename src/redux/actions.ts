@@ -24,7 +24,7 @@ import {
   InformationDateString,
   Credit,
   EditCreditAction
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 
 import {
   EditDependentAction,
@@ -38,9 +38,9 @@ import {
   EditAssetAction,
   EditF3921Action,
   EditScheduleK1Form1065Action
-} from 'ustaxes/core/data'
-import * as validators from 'ustaxes/core/data/validate'
-import { index as indexValidator } from 'ustaxes/core/data/validate'
+} from 'freeustaxes/core/data'
+import * as validators from 'freeustaxes/core/data/validate'
+import { index as indexValidator } from 'freeustaxes/core/data/validate'
 import { ValidateFunction } from 'ajv'
 import { infoToStringInfo } from './data'
 

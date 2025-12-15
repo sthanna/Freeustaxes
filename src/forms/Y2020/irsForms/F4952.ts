@@ -1,6 +1,6 @@
 import F1040Attachment from './F1040Attachment'
-import { Field } from 'ustaxes/core/pdfFiller'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
+import { Field } from 'freeustaxes/core/pdfFiller'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
 
 /**
  * Impacts Schedule D, capital gains and taxes worksheet,

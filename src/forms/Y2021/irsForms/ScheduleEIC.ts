@@ -1,16 +1,16 @@
 import F1040Attachment from './F1040Attachment'
-import { Dependent, FilingStatus } from 'ustaxes/core/data'
+import { Dependent, FilingStatus } from 'freeustaxes/core/data'
 import F1040 from './F1040'
-import { sumFields } from 'ustaxes/core/irsForms/util'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
 import * as federal from '../data/federal'
 import F2555 from './F2555'
 import F4797 from './F4797'
 import F8814 from './F8814'
 import Pub596Worksheet1 from './worksheets/Pub596Worksheet1'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
-import { evaluatePiecewise, Piecewise } from 'ustaxes/core/util'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { evaluatePiecewise, Piecewise } from 'freeustaxes/core/util'
 import _ from 'lodash'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 type PrecludesEIC<F> = (f: F) => boolean
 

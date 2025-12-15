@@ -3,8 +3,8 @@
 
 import { waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { store } from 'ustaxes/redux/store'
-import log from 'ustaxes/core/log'
+import { store } from 'freeustaxes/redux/store'
+import log from 'freeustaxes/core/log'
 import { SpouseAndDependentTestPage } from './Pages'
 
 afterEach(async () => {

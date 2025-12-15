@@ -10,10 +10,10 @@ import {
   useFormContext,
   get
 } from 'react-hook-form'
-import { isNumeric, Patterns } from 'ustaxes/components/Patterns'
-import ConditionallyWrap from 'ustaxes/components/ConditionallyWrap'
+import { isNumeric, Patterns } from 'freeustaxes/components/Patterns'
+import ConditionallyWrap from 'freeustaxes/components/ConditionallyWrap'
 import useStyles from './styles'
-import { useFormContainer } from 'ustaxes/components/FormContainer/Context'
+import { useFormContainer } from 'freeustaxes/components/FormContainer/Context'
 
 export function LabeledInput<TFormValues extends FieldValues>(
   props: LabeledInputProps<TFormValues>

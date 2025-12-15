@@ -1,14 +1,14 @@
 /* eslint @typescript-eslint/no-empty-function: "off" */
 
-import { FilingStatus, Income1099Type, PersonRole } from 'ustaxes/core/data'
+import { FilingStatus, Income1099Type, PersonRole } from 'freeustaxes/core/data'
 import { CURRENT_YEAR, healthSavingsAccounts } from '../data/federal'
 import F8889 from '../irsForms/F8889'
 import { cloneDeep } from 'lodash'
 import F1040 from '../irsForms/F1040'
-import { blankState } from 'ustaxes/redux/reducer'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
-import { yearFormBuilder } from 'ustaxes/forms/YearForms'
-import { run } from 'ustaxes/core/util'
+import { blankState } from 'freeustaxes/redux/reducer'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
+import { yearFormBuilder } from 'freeustaxes/forms/YearForms'
+import { run } from 'freeustaxes/core/util'
 import { commonTests } from '.'
 
 const baseInformation: ValidatedInformation = {

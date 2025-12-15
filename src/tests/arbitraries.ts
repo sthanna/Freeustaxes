@@ -1,9 +1,9 @@
 import * as fc from 'fast-check'
-import * as util from 'ustaxes/core/util'
-import * as arbitraries from 'ustaxes/core/tests/arbitraries'
-import { YearsTaxesState } from 'ustaxes/redux'
+import * as util from 'freeustaxes/core/util'
+import * as arbitraries from 'freeustaxes/core/tests/arbitraries'
+import { YearsTaxesState } from 'freeustaxes/redux'
 import prand from 'pure-rand'
-import { Asset, AssetType, TaxYear, TaxYears } from 'ustaxes/core/data'
+import { Asset, AssetType, TaxYear, TaxYears } from 'freeustaxes/core/data'
 
 export const taxYear: fc.Arbitrary<TaxYear> = fc.constantFrom(
   ...util.enumKeys(TaxYears)

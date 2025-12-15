@@ -1,12 +1,12 @@
 import F1040Attachment from './F1040Attachment'
-import { F1099BData, FilingStatus } from 'ustaxes/core/data'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
-import { sumFields } from 'ustaxes/core/irsForms/util'
+import { F1099BData, FilingStatus } from 'freeustaxes/core/data'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
 import SDRateGainWorksheet from './worksheets/SDRateGainWorksheet'
 import SDUnrecaptured1250 from './worksheets/SDUnrecaptured1250'
 import F8949 from './F8949'
 import F1040 from './F1040'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 export default class ScheduleD extends F1040Attachment {
   tag: FormTag = 'f1040sd'

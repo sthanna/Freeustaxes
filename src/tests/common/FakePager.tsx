@@ -2,7 +2,7 @@ import { Button } from '@material-ui/core'
 import { within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { PropsWithChildren, ReactElement } from 'react'
-import { PagerContext, PagerProps } from 'ustaxes/components/pager'
+import { PagerContext, PagerProps } from 'freeustaxes/components/pager'
 import DomMethods from './DomMethods'
 
 const constPagerProps: PagerProps = {

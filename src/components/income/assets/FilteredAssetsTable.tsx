@@ -7,11 +7,11 @@ import {
   Currency,
   GenericLabeledDropdown,
   LabeledInput
-} from 'ustaxes/components/input'
-import { Asset, AssetType, TaxYear, TaxYears } from 'ustaxes/core/data'
-import { enumKeys } from 'ustaxes/core/util'
-import { YearsTaxesState } from 'ustaxes/redux'
-import * as actions from 'ustaxes/redux/actions'
+} from 'freeustaxes/components/input'
+import { Asset, AssetType, TaxYear, TaxYears } from 'freeustaxes/core/data'
+import { enumKeys } from 'freeustaxes/core/util'
+import { YearsTaxesState } from 'freeustaxes/redux'
+import * as actions from 'freeustaxes/redux/actions'
 import AssetSummary from './AssetSummary'
 
 type CloseYear = TaxYear | 'none' | 'all'

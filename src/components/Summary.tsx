@@ -14,16 +14,16 @@ import {
   AccordionSummary,
   AccordionDetails
 } from '@material-ui/core'
-import { YearsTaxesState } from 'ustaxes/redux'
-import { TaxYear } from 'ustaxes/core/data'
+import { YearsTaxesState } from 'freeustaxes/redux'
+import { TaxYear } from 'freeustaxes/core/data'
 import { Check, Close, ExpandMore } from '@material-ui/icons'
 import Alert from '@material-ui/lab/Alert'
 import { useSelector } from 'react-redux'
 import { createSummary, SummaryData } from './SummaryData'
 import { Currency } from './input'
-import { displayRound } from 'ustaxes/core/irsForms/util'
-import StateForm from 'ustaxes/core/stateForms/Form'
-import Form from 'ustaxes/core/irsForms/Form'
+import { displayRound } from 'freeustaxes/core/irsForms/util'
+import StateForm from 'freeustaxes/core/stateForms/Form'
+import Form from 'freeustaxes/core/irsForms/Form'
 interface BinaryStateListItemProps {
   active: boolean
   children: string | ReactElement | ReactElement[]

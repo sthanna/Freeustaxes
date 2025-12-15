@@ -1,9 +1,9 @@
-import { FormTag } from 'ustaxes/core/irsForms/Form'
-import { Asset, isSold, SoldAsset } from 'ustaxes/core/data'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { Asset, isSold, SoldAsset } from 'freeustaxes/core/data'
 import F1040Attachment from './F1040Attachment'
 import F1040 from './F1040'
 import { CURRENT_YEAR } from '../data/federal'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 type EmptyLine = [
   undefined,

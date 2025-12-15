@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import { Controller, FieldValues, useFormContext } from 'react-hook-form'
 import { LabeledCheckboxProps } from './types'
-import ConditionallyWrap from 'ustaxes/components/ConditionallyWrap'
+import ConditionallyWrap from 'freeustaxes/components/ConditionallyWrap'
 
 export function LabeledCheckbox<TFormValues extends FieldValues>(
   props: LabeledCheckboxProps<TFormValues>

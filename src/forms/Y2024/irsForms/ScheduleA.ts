@@ -1,7 +1,7 @@
 import F1040Attachment from './F1040Attachment'
-import { FilingStatus, ItemizedDeductions } from 'ustaxes/core/data'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { FilingStatus, ItemizedDeductions } from 'freeustaxes/core/data'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
+import { Field } from 'freeustaxes/core/pdfFiller'
 import F1040 from './F1040'
 
 const blankItemizedDeductions = {

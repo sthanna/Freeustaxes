@@ -1,8 +1,8 @@
-import { FilingStatus } from 'ustaxes/core/data'
+import { FilingStatus } from 'freeustaxes/core/data'
 import { CURRENT_YEAR } from '../data/federal'
 import { computeOrdinaryTax } from '../irsForms/TaxTable'
 import fs from 'fs/promises'
-import { parseCsvOrThrow } from 'ustaxes/data/csvImport'
+import { parseCsvOrThrow } from 'freeustaxes/data/csvImport'
 
 const getTaxTable = async (): Promise<number[][]> => {
   const path = './src/forms/Y2021/tests/taxTable.csv'

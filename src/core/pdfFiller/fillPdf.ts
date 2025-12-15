@@ -56,16 +56,20 @@ export function fillPDF(
         throw error('boolean')
       }
     } else if (pdfField instanceof PDFTextField) {
-      try {
-        const showValue =
-          !isNaN(value as number) &&
-          value &&
-          Array.from(value as string)[0] !== '0'
-            ? displayRound(value as number)?.toString()
-            : value?.toString()
-        pdfField.setText(showValue)
-      } catch (err) {
-        throw error('text field')
+      if (value !== undefined) {
+        try {
+          const showValue =
+            !isNaN(value as number) &&
+              value &&
+              Array.from(value as string)[0] !== '0'
+              ? displayRound(value as number)?.toString()
+              : value?.toString()
+          if (showValue !== undefined) {
+            pdfField.setText(showValue)
+          }
+        } catch (err) {
+          throw error('text field')
+        }
       }
     } else if (value !== undefined) {
       throw error('unknown')

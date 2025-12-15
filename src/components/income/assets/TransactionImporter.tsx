@@ -1,9 +1,9 @@
 import { ReactElement, useState } from 'react'
 import { Button, Grid, useMediaQuery } from '@material-ui/core'
-import { useDispatch } from 'ustaxes/redux'
-import * as actions from 'ustaxes/redux/actions'
-import { preflightCsv, preflightCsvAll } from 'ustaxes/data/csvImport'
-import { LoadRaw } from 'ustaxes/redux/fs/Load'
+import { useDispatch } from 'freeustaxes/redux'
+import * as actions from 'freeustaxes/redux/actions'
+import { preflightCsv, preflightCsvAll } from 'freeustaxes/data/csvImport'
+import { LoadRaw } from 'freeustaxes/redux/fs/Load'
 import DataTable, { TableColumn } from 'react-data-table-component'
 import { Alert } from '@material-ui/lab'
 import {
@@ -13,7 +13,7 @@ import {
   Side,
   Transaction,
   TransactionError
-} from 'ustaxes/data/transactions'
+} from 'freeustaxes/data/transactions'
 import {
   Either,
   EitherMethods,
@@ -23,8 +23,8 @@ import {
   pureLeft,
   right,
   run
-} from 'ustaxes/core/util'
-import { Asset } from 'ustaxes/core/data'
+} from 'freeustaxes/core/util'
+import { Asset } from 'freeustaxes/core/data'
 import ConfigurableDataTable, { ColumnDef } from './ConfigurableDataTable'
 
 interface PortfolioTableProps {

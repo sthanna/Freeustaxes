@@ -1,10 +1,10 @@
 import F1040Attachment from './F1040Attachment'
-import { CreditType, Dependent, FilingStatus } from 'ustaxes/core/data'
-import { sumFields } from 'ustaxes/core/irsForms/util'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
+import { CreditType, Dependent, FilingStatus } from 'freeustaxes/core/data'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
 import { CURRENT_YEAR } from '../data/federal'
-import { Field } from 'ustaxes/core/pdfFiller'
-import { nextMultipleOf1000 } from 'ustaxes/core/util'
+import { Field } from 'freeustaxes/core/pdfFiller'
+import { nextMultipleOf1000 } from 'freeustaxes/core/util'
 
 type Part1b = { allowed: boolean } & Partial<{
   l14a: number

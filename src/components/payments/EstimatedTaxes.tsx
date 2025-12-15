@@ -1,21 +1,21 @@
 import { ReactElement } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { usePager } from 'ustaxes/components/pager'
-import { EstimatedTaxPayments, TaxYear } from 'ustaxes/core/data'
-import { YearsTaxesState } from 'ustaxes/redux'
-import { Currency, LabeledInput } from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
+import { usePager } from 'freeustaxes/components/pager'
+import { EstimatedTaxPayments, TaxYear } from 'freeustaxes/core/data'
+import { YearsTaxesState } from 'freeustaxes/redux'
+import { Currency, LabeledInput } from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
 import { Grid } from '@material-ui/core'
 import { Work } from '@material-ui/icons'
 import {
   addEstimatedPayment,
   editEstimatedPayment,
   removeEstimatedPayment
-} from 'ustaxes/redux/actions'
-import { useDispatch } from 'ustaxes/redux'
+} from 'freeustaxes/redux/actions'
+import { useDispatch } from 'freeustaxes/redux'
 import { useSelector } from 'react-redux'
-import { useYearSelector } from 'ustaxes/redux/yearDispatch'
+import { useYearSelector } from 'freeustaxes/redux/yearDispatch'
 
 interface EstimatedTaxesUserInput {
   label: string

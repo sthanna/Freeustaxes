@@ -1,5 +1,5 @@
 // Reference implementation for ltcg and cap gains worksheet
-import { FilingStatus } from 'ustaxes/core/data'
+import { FilingStatus } from 'freeustaxes/core/data'
 import federalBrackets from '../../data/federal'
 import { computeOrdinaryTax } from '../../irsForms/TaxTable'
 import F1040 from '../F1040'

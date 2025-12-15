@@ -1,9 +1,9 @@
-import Form from 'ustaxes/core/stateForms/Form'
+import Form from 'freeustaxes/core/stateForms/Form'
 import F1040 from '../../irsForms/F1040'
-import { Field } from 'ustaxes/core/pdfFiller'
-import { Dependent, PrimaryPerson, Spouse, State } from 'ustaxes/core/data'
+import { Field } from 'freeustaxes/core/pdfFiller'
+import { Dependent, PrimaryPerson, Spouse, State } from 'freeustaxes/core/data'
 import parameters from './Parameters'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 
 export class IL1040scheduleileeic extends Form {
   f1040: F1040

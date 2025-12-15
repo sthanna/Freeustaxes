@@ -1,12 +1,12 @@
-import Form, { FormMethods } from 'ustaxes/core/stateForms/Form'
+import Form, { FormMethods } from 'freeustaxes/core/stateForms/Form'
 import F1040 from '../../irsForms/F1040'
-import { Field } from 'ustaxes/core/pdfFiller'
-// import { sumFields } from 'ustaxes/core/irsForms/util'
-import { State } from 'ustaxes/core/data'
+import { Field } from 'freeustaxes/core/pdfFiller'
+// import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { State } from 'freeustaxes/core/data'
 // import parameters from './Parameters'
 import { ORWFHDC } from './ORWFHDC'
 import OR40V from './OR40V'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 
 export class OR40 extends Form {
   info: ValidatedInformation

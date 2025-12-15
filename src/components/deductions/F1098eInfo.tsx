@@ -2,15 +2,15 @@ import { ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
 import { FormProvider, useForm } from 'react-hook-form'
 import SchoolIcon from '@material-ui/icons/School'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
-import { add1098e, edit1098e, remove1098e } from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
-import { Currency, LabeledInput } from 'ustaxes/components/input'
-import { F1098e } from 'ustaxes/core/data'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
+import { add1098e, edit1098e, remove1098e } from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
+import { Currency, LabeledInput } from 'freeustaxes/components/input'
+import { F1098e } from 'freeustaxes/core/data'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
 import { Grid } from '@material-ui/core'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 const showInterest = (a: F1098e): ReactElement => {
   return <Currency value={a.interest} />
@@ -57,9 +57,9 @@ export default function F1098eInfo(): ReactElement {
 
   const onEdit1098e =
     (index: number) =>
-    (formData: F1098EUserInput): void => {
-      dispatch(edit1098e({ value: toF1098e(formData), index }))
-    }
+      (formData: F1098EUserInput): void => {
+        dispatch(edit1098e({ value: toF1098e(formData), index }))
+      }
 
   const form: ReactElement | undefined = (
     <FormListContainer

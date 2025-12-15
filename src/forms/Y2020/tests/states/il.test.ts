@@ -1,13 +1,13 @@
 import * as fc from 'fast-check'
 import F1040 from '../../irsForms/F1040'
-import Form from 'ustaxes/core/irsForms/Form'
+import Form from 'freeustaxes/core/irsForms/Form'
 import { create1040 } from '../../irsForms/Main'
-import { Information, PersonRole } from 'ustaxes/core/data'
+import { Information, PersonRole } from 'freeustaxes/core/data'
 import { createStateReturn } from '../../stateForms'
 import { ILWIT } from '../../stateForms/IL/ILWit'
-import { isLeft } from 'ustaxes/core/util'
-import StateForm from 'ustaxes/core/stateForms/Form'
-import * as arbitraries from 'ustaxes/core/tests/arbitraries'
+import { isLeft } from 'freeustaxes/core/util'
+import StateForm from 'freeustaxes/core/stateForms/Form'
+import * as arbitraries from 'freeustaxes/core/tests/arbitraries'
 import { fail } from 'assert'
 
 const withStateReturn = (

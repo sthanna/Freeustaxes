@@ -1,13 +1,13 @@
 import { fica } from '../data/federal'
 import F1040 from '../irsForms/F1040'
 import F8959 from '../irsForms/F8959'
-import Form from 'ustaxes/core/irsForms/Form'
-import { displayRound } from 'ustaxes/core/irsForms/util'
+import Form from 'freeustaxes/core/irsForms/Form'
+import { displayRound } from 'freeustaxes/core/irsForms/util'
 import Schedule2 from '../irsForms/Schedule2'
 import Schedule3 from '../irsForms/Schedule3'
-import { claimableExcessSSTaxWithholding } from 'ustaxes/forms/Y2020/irsForms/Schedule3'
+import { claimableExcessSSTaxWithholding } from 'freeustaxes/forms/Y2020/irsForms/Schedule3'
 import { testKit, commonTests } from '.'
-import { PersonRole } from 'ustaxes/core/data'
+import { PersonRole } from 'freeustaxes/core/data'
 
 beforeAll(() => {
   jest.spyOn(console, 'warn').mockImplementation(() => {

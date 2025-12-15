@@ -1,7 +1,7 @@
-import Form from 'ustaxes/core/irsForms/Form'
-import { TaxYear } from 'ustaxes/core/data'
-import F1040For2020 from 'ustaxes/forms/Y2020/irsForms/F1040'
-import F1040For2021 from 'ustaxes/forms/Y2021/irsForms/F1040'
+import Form from 'freeustaxes/core/irsForms/Form'
+import { TaxYear } from 'freeustaxes/core/data'
+import F1040For2020 from 'freeustaxes/forms/Y2020/irsForms/F1040'
+import F1040For2021 from 'freeustaxes/forms/Y2021/irsForms/F1040'
 
 interface Credit {
   name: string

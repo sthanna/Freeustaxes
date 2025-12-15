@@ -8,8 +8,8 @@ import _ from 'lodash'
 import {
   ValidatedInformation,
   ValidatedTaxpayer
-} from 'ustaxes/forms/F1040Base'
-import { blankYearTaxesState, YearsTaxesState } from 'ustaxes/redux'
+} from 'freeustaxes/forms/F1040Base'
+import { blankYearTaxesState, YearsTaxesState } from 'freeustaxes/redux'
 
 const lower: Arbitrary<string> = fc
   .integer({ min: 0x61, max: 0x7a })

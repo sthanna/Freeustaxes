@@ -1,4 +1,58 @@
 import { enumKeys } from '../util'
+import { StateUIState } from '../types/StateUI'
+// Restored State definition
+export type State =
+  | 'AL'
+  | 'AK'
+  | 'AZ'
+  | 'CO'
+  | 'DC'
+  | 'FL'
+  | 'HI'
+  | 'ID'
+  | 'IN'
+  | 'KY'
+  | 'MA'
+  | 'ME'
+  | 'MN'
+  | 'MS'
+  | 'NC'
+  | 'NE'
+  | 'NJ'
+  | 'NV'
+  | 'OH'
+  | 'OR'
+  | 'RI'
+  | 'SD'
+  | 'TX'
+  | 'VA'
+  | 'WA'
+  | 'WV'
+  | 'AR'
+  | 'CA'
+  | 'CT'
+  | 'DE'
+  | 'GA'
+  | 'IA'
+  | 'IL'
+  | 'KS'
+  | 'LA'
+  | 'MD'
+  | 'MI'
+  | 'MO'
+  | 'MT'
+  | 'ND'
+  | 'NH'
+  | 'NM'
+  | 'NY'
+  | 'OK'
+  | 'PA'
+  | 'SC'
+  | 'TN'
+  | 'UT'
+  | 'VT'
+  | 'WI'
+  | 'WY'
 
 export enum TaxYears {
   Y2019 = 2019,
@@ -125,16 +179,19 @@ export interface F1099BData {
   shortTermCostBasis: number
   longTermProceeds: number
   longTermCostBasis: number
+  stateTaxWithheld?: number
 }
 
 export interface F1099IntData {
   income: number
+  stateTaxWithheld?: number
 }
 
 export interface F1099DivData {
   dividends: number
   qualifiedDividends: number
   totalCapitalGainsDistributions: number
+  stateTaxWithheld?: number
 }
 /*
  TODO: Add in logic for various different distributions
@@ -167,6 +224,7 @@ export interface F1099RData {
   taxableAmount: number
   federalIncomeTaxWithheld: number
   planType: PlanType1099
+  stateTaxWithheld?: number
 }
 
 export interface F1099SSAData {
@@ -174,6 +232,7 @@ export interface F1099SSAData {
   // benefitsRepaid: number
   netBenefits: number
   federalIncomeTaxWithheld: number
+  stateTaxWithheld?: number
 }
 
 export interface Income1099<T, D> {
@@ -461,58 +520,8 @@ export interface ItemizedDeductions {
   charityOther: string | number
 }
 
-export type State =
-  | 'AL'
-  | 'AK'
-  | 'AZ'
-  | 'CO'
-  | 'DC'
-  | 'FL'
-  | 'HI'
-  | 'ID'
-  | 'IN'
-  | 'KY'
-  | 'MA'
-  | 'ME'
-  | 'MN'
-  | 'MS'
-  | 'NC'
-  | 'NE'
-  | 'NJ'
-  | 'NV'
-  | 'OH'
-  | 'OR'
-  | 'RI'
-  | 'SD'
-  | 'TX'
-  | 'VA'
-  | 'WA'
-  | 'WV'
-  | 'AR'
-  | 'CA'
-  | 'CT'
-  | 'DE'
-  | 'GA'
-  | 'IA'
-  | 'IL'
-  | 'KS'
-  | 'LA'
-  | 'MD'
-  | 'MI'
-  | 'MO'
-  | 'MT'
-  | 'ND'
-  | 'NH'
-  | 'NM'
-  | 'NY'
-  | 'OK'
-  | 'PA'
-  | 'SC'
-  | 'TN'
-  | 'UT'
-  | 'VT'
-  | 'WI'
-  | 'WY'
+// State type moved to ../types/State
+
 
 // Hold information about state residency
 // TODO: Support part-year state residency
@@ -559,9 +568,64 @@ export interface Credit {
   type: CreditType
 }
 
+export interface AdditionalIncome {
+  taxableRefunds?: number // S1_1
+  alimonyReceived?: number // S1_2a
+  dateOfDivorce?: string // S1_2b
+  businessIncome?: number // S1_3 (Sched C)
+  otherGains?: number // S1_4 (Form 4797)
+  rentalRealEstate?: number // S1_5 (Sched E)
+  farmIncome?: number // S1_6 (Sched F)
+  unemployment?: number // S1_7
+  netOperatingLoss?: number // S1_8a
+  gamblingIncome?: number // S1_8b
+  cancellationOfDebt?: number // S1_8c
+  foreignEarnedIncomeExclusion?: number // S1_8d
+  nontaxableMedicaidWaiver?: number // S1_8s
+  otherIncome?: { [key: string]: number } // S1_8z etc
+}
+
+export interface Adjustments {
+  educatorExpenses?: number // S1_11
+  reservistBusinessExpenses?: number // S1_12
+  healthSavingsAccountDeduction?: number // S1_13
+  movingExpenses?: number // S1_14
+  selfEmploymentTaxDeduction?: number // S1_15
+  selfEmployedSEP?: number // S1_16
+  selfEmployedHealthInsurance?: number // S1_17
+  penaltyOnEarlyWithdrawal?: number // S1_18
+  alimonyPaid?: number // S1_19a
+  iraDeduction?: number // S1_20
+  studentLoanInterestDeduction?: number // S1_21
+  archerMSADeduction?: number // S1_23
+  otherAdjustments?: { [key: string]: number } // S1_24z etc
+}
+
+export interface Form8949Transaction {
+  description: string
+  dateAcquired?: string
+  dateSold?: string
+  proceeds: number
+  costBasis: number
+  adjustmentCode?: string
+  adjustmentAmount?: number
+  reportingCategory: 'A' | 'B' | 'C' | 'D' | 'E' | 'F'
+}
+
+export interface ScheduleDInput {
+  transactions: Form8949Transaction[]
+  shortTermCarryover?: number
+  longTermCarryover?: number
+}
+
 export interface Information<D = Date> {
   f1099s: Supported1099[]
   w2s: IncomeW2[]
+  schedule1?: {
+    additionalIncome?: AdditionalIncome
+    adjustments?: Adjustments
+  }
+  scheduleD?: ScheduleDInput
   realEstate: Property[]
   estimatedTaxes: EstimatedTaxPayments[]
   f1098es: F1098e[]
@@ -575,6 +639,180 @@ export interface Information<D = Date> {
   stateResidencies: StateResidency[]
   healthSavingsAccounts: HealthSavingsAccount<D>[]
   individualRetirementArrangements: Ira[]
+  qbiDeduction?: number
+  massachusetts?: MassachusettsInput
+  newYork?: NewYorkInput
+  newJersey?: NewJerseyInput
+  pennsylvania?: PennsylvaniaInput
+  california?: CaliforniaInput
+  northCarolina?: NorthCarolinaInput
+  ohio?: OhioInput
+  virginia?: VirginiaInput
+  uiState?: StateUIState
+}
+
+export interface MassachusettsInput {
+  rentPaid?: number
+  medicalDental?: number
+  adoption?: number
+  useTax?: number
+  healthCarePenalty?: {
+    primary?: number
+    spouse?: number
+  }
+  limitedIncomeCredit?: number
+  incomeTaxPaidToOtherJurisdictions?: number
+  otherCredits?: number
+  voluntaryContributions?: {
+    endangeredWildlife?: number
+    organTransplant?: number
+    massAIDS?: number
+    massUSOlympic?: number
+    massMilitaryRelief?: number
+    homelessAnimal?: number
+    total?: number
+  }
+}
+
+export interface NewYorkInput {
+  // Residency & Status
+  nycResident?: boolean
+  yonkersResident?: boolean
+  schoolDistrict?: string
+  schoolCode?: string
+  county?: string
+  monthsInNYC?: { primary?: number, spouse?: number }
+
+  // Additions (L20-23)
+  interestNonNY?: number // L20
+  publicEmployeeRetirementContribs?: number // L21
+  ny529Distributions?: number // L22
+  otherAdditions?: number // L23
+
+  // Subtractions (L26-31)
+  pensionsNY?: number // L26
+  usGovInterest?: number // L28
+  pensionExclusion?: number // L29
+  ny529Deduction?: number // L30
+  otherSubtractions?: number // L31
+
+  // Credits & Taxes
+  householdCredit?: number
+  residentCredit?: number // L41
+  otherNonRefundableCredits?: number // L42
+  netOtherNYTaxes?: number // L45
+
+  // NYC / Yonkers
+  nycTaxWithheld?: number // L73
+  yonkersTaxWithheld?: number // L74
+
+  // Other
+  salesUseTax?: number // L59
+  voluntaryGifts?: number // L60
+
+  // Refundable Credits
+  empireStateChildCredit?: number // L63
+  childCareCredit?: number // L64
+  earnedIncomeCredit?: number // L65
+  nonCustodialParentEIC?: number // L66
+  realPropertyCredit?: number // L67
+  collegeTuitionCredit?: number // L68
+  otherRefundableCredits?: number // L71
+}
+
+export interface NewJerseyInput {
+  // Exemptions
+  veteran?: boolean // L9
+  spouseVeteran?: boolean // L9
+
+  // Income
+  pensionExclusion?: number // L28a
+  otherRetirementExclusion?: number // L28b
+
+  // Deductions/Credits
+  medicalExpenses?: number // Worksheet F
+  propertyTaxPaid?: number // L40a
+  rentPaid?: number
+  homeowner?: boolean
+  tenant?: boolean
+
+  // Other Credits
+  shelteredWorkshopCredit?: number // L46
+  goldStarFamilyCredit?: number // L47
+
+  // Payments
+  estimatedTaxPayments?: number // L57
+  excessUIWithheld?: number // L59
+  excessDisabilityWithheld?: number // L60
+  excessFamilyLeaveWithheld?: number // L61
+  woundedWarriorCredit?: number // L62
+
+  // Withholding
+  stateWithholding?: number // L55
+}
+
+export interface PennsylvaniaInput {
+  // Income Adjustments & Classes
+  unreimbursedBusinessExpenses?: number // L1b
+  taxForgivenessCredit?: number // L21
+  residentCredit?: number // L22
+  otherCredits?: number // L23
+  useTax?: number // L25
+  penalties?: number // L27
+  stateWithholding?: number // Additional state withholding not captured in W2s
+
+  // Specific Income overrides if not implicit from Fed
+  grossCompensation?: number // L1a
+  // Note: Fed Wages usually map to L1a, but PA rules differ slightly (e.g. 401k contribs are taxable).
+  // We'll trust W2 for now but allow override.
+}
+
+export interface CaliforniaInput {
+  adjustments?: { [key: string]: number } // CA540_Addit_*, CA540_Subtr_*
+  mentalHealthTax?: number // L62
+  useTax?: number // L91
+  rentersCredit?: boolean // L46 (calculated or boolean trigger)
+  exemptionCredits?: number // Override L32
+  otherStateTaxCredit?: number
+
+  // Withholding
+  stateWithholding?: number // L71
+}
+
+export interface NorthCarolinaInput {
+  additions?: number // L7
+  deductions?: number // L9
+  childDeductionCount?: number // L10a (Number of qualifying children)
+  taxCredits?: number // L16
+  useTax?: number // L18
+  stateWithholding?: number // L20
+  estimatedTaxPayments?: number // L21
+  residentStatus?: 'Full-Year' | 'Part-Year' | 'Non-Resident' // L13
+}
+
+export interface OhioInput {
+  additions?: number // Sched A lines 1-11
+  deductions?: number // Sched A lines 13-35
+  exemptions?: number // Override count if needed
+  jointFilingCredit?: boolean // Manual override for JFC eligibility
+  taxCredits?: number // Sched C total
+  useTax?: number // L12
+  stateWithholding?: number // L14
+  estimatedTaxPayments?: number // L15
+}
+
+export interface VirginiaInput {
+  additions?: number // L2
+  subtractions?: number // L7 (part of total subtractions)
+  exemptionsCount?: number // Override count if needed
+  spouseTaxAdjustment?: number // L17
+  lowIncomeCredit?: number // L23
+  creditForTaxPaidToOtherState?: number // L24
+  otherCredits?: number // L25
+  useTax?: number // L33
+  stateWithholding?: number // L19a
+  estimatedTaxPayments?: number // L20
+  extensionPayments?: number // L22
 }
 
 export type InformationDateString = Information<string>

@@ -1,13 +1,125 @@
+:root {
+  /* Haven Tax Palette */
+  --bg-color: #F8F9F7;
+  /* Soft Cream */
+  --text-color: #2C5F78;
+  /* Deep Sea Teal (used for text/headers) */
+  --primary-color: #E39485;
+  /* Muted Coral (Buttons) */
+  --secondary-color: #d68c7e;
+  /* Darker Coral for hover */
+  --accent-color: #A0BFA3;
+  /* Sage Green */
+  --header-color: #2C5F78;
+  /* Deep Sea Teal */
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow-soft: 0 10px 30px -10px rgba(44, 95, 120, 0.1);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+  color: var(--header-color);
+  font-weight: 700;
+}
+
+/* Card Styles */
+.MuiPaper-root {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: none !important;
+  border-radius: 24px !important;
+  /* Soft rounded corners */
+}
+
+/* Primary Button Styles */
+.MuiButton-containedPrimary {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  /* Minimalist style */
+  border-radius: 50px !important;
+  /* Fully rounded buttons */
+  box-shadow: 0 4px 14px 0 rgba(227, 148, 133, 0.4) !important;
+  transition: all 0.2s ease-in-out !important;
+  padding: 10px 24px !important;
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: var(--secondary-color) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(227, 148, 133, 0.5) !important;
+}
+
+/* Text Field Styles */
+.MuiInputBase-root {
+  color: var(--text-color) !important;
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #E0E0E0 !important;
+  border-radius: 12px !important;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--accent-color) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--header-color) !important;
+  border-width: 2px !important;
+}
+
+.MuiInputLabel-root {
+  color: #8898aa !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--header-color) !important;
+}
+
+/* AppBar Styles */
+.MuiAppBar-root {
+  background-color: var(--bg-color) !important;
+  color: var(--header-color) !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* Link Styles */
+a {
+  color: var(--header-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--primary-color);
 }

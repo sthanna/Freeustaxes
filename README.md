@@ -1,13 +1,13 @@
 <div align="center">
-<h1><a href="//ustaxes.org">USTaxes</a></h1>
+<h1>FreeUsTaxes</h1>
 
 [![Netlify Status][netlify-badge]][netlify-url] [![Github Latest Release][release-badge]][github-release] [![discord-badge]][discord-url] [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9884/badge)](https://www.bestpractices.dev/projects/9884)
 
 </div>
 
-## What is UsTaxes?
+## What is FreeUsTaxes?
 
-UsTaxes is a free, open-source tax filing application that can be used to file the Federal 1040 form. It is available in both [web](https://ustaxes.org/) and [desktop][desktop-releases] versions. It is provided free of charge and requires no sharing of personal data.
+FreeUsTaxes is a free, open-source tax filing application that can be used to file the Federal 1040 form. It is available in both web and [desktop][desktop-releases] versions. It is provided free of charge and requires no sharing of personal data.
 
 **Interested in contributing? [Get Started](#user-content-get-started)**
 

@@ -1,4 +1,4 @@
-import Form from 'ustaxes/core/irsForms/Form'
+import Form from 'freeustaxes/core/irsForms/Form'
 import F1040 from './F1040'
 
 abstract class F1040Attachment extends Form {

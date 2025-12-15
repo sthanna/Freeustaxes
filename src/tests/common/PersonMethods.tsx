@@ -1,4 +1,4 @@
-import { labels as personLabels } from 'ustaxes/components/TaxPayer/PersonFields'
+import { labels as personLabels } from 'freeustaxes/components/TaxPayer/PersonFields'
 import { within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import DomMethods from './DomMethods'

@@ -1,13 +1,13 @@
-import Form, { FormMethods } from 'ustaxes/core/stateForms/Form'
+import Form, { FormMethods } from 'freeustaxes/core/stateForms/Form'
 import F1040 from '../../irsForms/F1040'
-import { Field, RadioSelect } from 'ustaxes/core/pdfFiller'
-import { sumFields } from 'ustaxes/core/irsForms/util'
-import { AccountType, FilingStatus, State } from 'ustaxes/core/data'
+import { Field, RadioSelect } from 'freeustaxes/core/pdfFiller'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { AccountType, FilingStatus, State } from 'freeustaxes/core/data'
 import parameters from './Parameters'
 import { IL1040scheduleileeic } from './IL1040ScheduleILEIC'
 import IL1040V from './IL1040V'
 import { ILWIT } from './ILWit'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 
 export class IL1040 extends Form {
   info: ValidatedInformation

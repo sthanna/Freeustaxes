@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
 import fc, { Parameters } from 'fast-check'
-import { Information, Asset, TaxYear, TaxYears } from 'ustaxes/core/data'
-import Form from 'ustaxes/core/irsForms/Form'
-import { run } from 'ustaxes/core/util'
-import * as arbitraries from 'ustaxes/core/tests/arbitraries'
-import * as ustarbitraries from 'ustaxes/tests/arbitraries'
-import { localPDFs } from 'ustaxes/core/tests/LocalForms'
+import { Information, Asset, TaxYear, TaxYears } from 'freeustaxes/core/data'
+import Form from 'freeustaxes/core/irsForms/Form'
+import { run } from 'freeustaxes/core/util'
+import * as arbitraries from 'freeustaxes/core/tests/arbitraries'
+import * as ustarbitraries from 'freeustaxes/tests/arbitraries'
+import { localPDFs } from 'freeustaxes/core/tests/LocalForms'
 import fs from 'fs/promises'
 import path from 'path'
 import { PDFDocument } from 'pdf-lib'
-import { insertFormDataToPdfs } from 'ustaxes/core/irsForms'
+import { insertFormDataToPdfs } from 'freeustaxes/core/irsForms'
 import { CreateForms, yearFormBuilder } from '../YearForms'
-import { PDFDownloader } from 'ustaxes/core/pdfFiller/pdfHandler'
+import { PDFDownloader } from 'freeustaxes/core/pdfFiller/pdfHandler'
 import { ValidatedInformation } from '../F1040Base'
 
 const logsDir = path.resolve(__dirname, '../../../logs/errors')

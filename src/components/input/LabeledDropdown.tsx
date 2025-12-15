@@ -3,12 +3,12 @@ import _ from 'lodash'
 import { useForkRef } from 'rooks'
 import { Grid, TextField } from '@material-ui/core'
 import { Controller, FieldValues, useFormContext } from 'react-hook-form'
-import locationPostalCodes from 'ustaxes/core/data/locationPostalCodes'
-import countries from 'ustaxes/core/data/countries'
-import { State } from 'ustaxes/core/data'
+import locationPostalCodes from 'freeustaxes/core/data/locationPostalCodes'
+import countries from 'freeustaxes/core/data/countries'
+import { State } from 'freeustaxes/core/data'
 import useStyles from './styles'
 import { BaseDropdownProps, LabeledDropdownProps } from './types'
-import ConditionallyWrap from 'ustaxes/components/ConditionallyWrap'
+import ConditionallyWrap from 'freeustaxes/components/ConditionallyWrap'
 
 export function GenericLabeledDropdown<A, TFormValues extends FieldValues>(
   props: LabeledDropdownProps<A, TFormValues>

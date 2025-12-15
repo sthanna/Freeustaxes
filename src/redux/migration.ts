@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { enumKeys } from 'ustaxes/core/util'
+import { enumKeys } from 'freeustaxes/core/util'
 import {
   Person,
   Dependent,
@@ -7,7 +7,7 @@ import {
   PrimaryPerson,
   TaxYears,
   FilingStatus
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 import { blankState } from './reducer'
 import { USTState } from './store'
 

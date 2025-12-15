@@ -1,6 +1,6 @@
 import F1040Attachment from './F1040Attachment'
-import { Field } from 'ustaxes/core/pdfFiller'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
+import { Field } from 'freeustaxes/core/pdfFiller'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
 
 // Not yet implemented
 export default class ScheduleA extends F1040Attachment {

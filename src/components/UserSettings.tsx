@@ -1,8 +1,8 @@
 import { Check } from '@material-ui/icons'
 import { ReactElement, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fsRecover } from 'ustaxes/redux/fs/Actions'
-import { LoadRaw } from 'ustaxes/redux/fs/Load'
+import { fsRecover } from 'freeustaxes/redux/fs/Actions'
+import { LoadRaw } from 'freeustaxes/redux/fs/Load'
 import SaveToFile from './SaveToFile'
 import ClearLocalStorage from './ClearLocalStorage'
 

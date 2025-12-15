@@ -16,12 +16,12 @@ import ScrollTop from './ScrollTop'
 import Menu, { backPages, drawerSectionsForYear } from './Menu'
 import { Section, SectionItem } from './ResponsiveDrawer'
 
-import Urls from 'ustaxes/data/urls'
+import Urls from 'freeustaxes/data/urls'
 import DataPropagator from './DataPropagator'
 import YearStatusBar from './YearStatusBar'
 import { useSelector } from 'react-redux'
-import { TaxYear } from 'ustaxes/core/data'
-import { YearsTaxesState } from 'ustaxes/redux'
+import { TaxYear } from 'freeustaxes/core/data'
+import { YearsTaxesState } from 'freeustaxes/redux'
 
 type Props = {
   isMobile: boolean

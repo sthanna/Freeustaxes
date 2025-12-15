@@ -6,16 +6,16 @@ import {
   ListItemIcon,
   ListItemSecondaryAction
 } from '@material-ui/core'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
 import {
   formatSSID,
   LabeledInput,
   LabeledCheckbox,
   DatePicker
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { removeDependent } from 'ustaxes/redux/actions'
-import { Person } from 'ustaxes/core/data'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { removeDependent } from 'freeustaxes/redux/actions'
+import { Person } from 'freeustaxes/core/data'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
 import ListItemText from '@material-ui/core/ListItemText'

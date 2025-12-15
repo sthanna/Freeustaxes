@@ -5,7 +5,7 @@ import {
   Security,
   Side,
   Transaction
-} from 'ustaxes/data/transactions'
+} from 'freeustaxes/data/transactions'
 
 export const security = (): Arbitrary<Security> =>
   fc.string({ minLength: 1, maxLength: 5 }).map((name) => ({ name }))

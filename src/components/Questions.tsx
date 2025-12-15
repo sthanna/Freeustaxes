@@ -1,15 +1,15 @@
 import { ReactElement, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { Grid, List, ListItem } from '@material-ui/core'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
-import { QuestionTagName, Responses } from 'ustaxes/core/data'
-import { getRequiredQuestions } from 'ustaxes/core/data/questions'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
+import { QuestionTagName, Responses } from 'freeustaxes/core/data'
+import { getRequiredQuestions } from 'freeustaxes/core/data/questions'
 import { LabeledCheckbox, LabeledInput } from './input'
-import { answerQuestion } from 'ustaxes/redux/actions'
+import { answerQuestion } from 'freeustaxes/redux/actions'
 import { FormProvider, useForm } from 'react-hook-form'
 import { usePager } from './pager'
 import _ from 'lodash'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 const emptyQuestions: Responses = {
   CRYPTO: false,

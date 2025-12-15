@@ -1,9 +1,9 @@
 import F1040Attachment from './F1040Attachment'
-import { PersonRole } from 'ustaxes/core/data'
-import { sumFields } from 'ustaxes/core/irsForms/util'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
+import { PersonRole } from 'freeustaxes/core/data'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
 import { fica } from '../data/federal'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 export default class Schedule3 extends F1040Attachment {
   tag: FormTag = 'f1040s3'
@@ -17,29 +17,34 @@ export default class Schedule3 extends F1040Attachment {
     //    of that amount
 
     let claimableExcessFica = 0
-    const primaryFica = w2s
-      .filter((w2) => w2.personRole == PersonRole.PRIMARY)
+    const primaryW2s = w2s.filter((w2) => w2.personRole == PersonRole.PRIMARY)
+    const primaryFica = primaryW2s
       .map((w2) => w2.ssWithholding)
       .reduce((l, r) => l + r, 0)
-    const spouseFica = w2s
-      .filter((w2) => w2.personRole == PersonRole.SPOUSE)
+    const primarySSWages = primaryW2s
+      .map((w2) => w2.ssWages)
+      .reduce((l, r) => l + r, 0)
+
+    const spouseW2s = w2s.filter((w2) => w2.personRole == PersonRole.SPOUSE)
+    const spouseFica = spouseW2s
       .map((w2) => w2.ssWithholding)
+      .reduce((l, r) => l + r, 0)
+    const spouseSSWages = spouseW2s
+      .map((w2) => w2.ssWages)
       .reduce((l, r) => l + r, 0)
 
     if (
       primaryFica > fica.maxSSTax &&
-      w2s
-        .filter((w2) => w2.personRole == PersonRole.PRIMARY)
-        .every((w2) => w2.ssWithholding <= fica.maxSSTax)
+      primarySSWages > fica.maxIncomeSSTaxApplies &&
+      primaryW2s.every((w2) => w2.ssWithholding <= fica.maxSSTax)
     ) {
       claimableExcessFica += primaryFica - fica.maxSSTax
     }
 
     if (
       spouseFica > fica.maxSSTax &&
-      w2s
-        .filter((w2) => w2.personRole == PersonRole.SPOUSE)
-        .every((w2) => w2.ssWithholding <= fica.maxSSTax)
+      spouseSSWages > fica.maxIncomeSSTaxApplies &&
+      spouseW2s.every((w2) => w2.ssWithholding <= fica.maxSSTax)
     ) {
       claimableExcessFica += spouseFica - fica.maxSSTax
     }

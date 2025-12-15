@@ -1,14 +1,14 @@
 import { ReactElement, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm, FormProvider } from 'react-hook-form'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
-import { Patterns } from 'ustaxes/components/Patterns'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
+import { Patterns } from 'freeustaxes/components/Patterns'
 import {
   LabeledInput,
   LabeledCheckbox,
   formatSSID,
   GenericLabeledDropdown
-} from 'ustaxes/components/input'
+} from 'freeustaxes/components/input'
 import {
   TaxPayer,
   Dependent,
@@ -17,7 +17,7 @@ import {
   FilingStatus,
   FilingStatusTexts,
   filingStatuses
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 import {
   addDependent,
   addSpouse,
@@ -25,14 +25,14 @@ import {
   removeDependent,
   removeSpouse,
   saveFilingStatusInfo
-} from 'ustaxes/redux/actions'
+} from 'freeustaxes/redux/actions'
 import { PersonFields } from './PersonFields'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
-import { usePager } from 'ustaxes/components/pager'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
+import { usePager } from 'freeustaxes/components/pager'
 import { Box, Grid } from '@material-ui/core'
 import { Person } from '@material-ui/icons'
 import { Alert } from '@material-ui/lab'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 interface UserPersonForm {
   firstName: string
@@ -136,14 +136,14 @@ export const AddDependentForm = (): ReactElement => {
 
   const onSubmitEdit =
     (index: number) =>
-    (formData: UserDependentForm): void => {
-      dispatch(
-        editDependent({
-          index,
-          value: toDependent(formData)
-        })
-      )
-    }
+      (formData: UserDependentForm): void => {
+        dispatch(
+          editDependent({
+            index,
+            value: toDependent(formData)
+          })
+        )
+      }
 
   const page = (
     <FormListContainer<UserDependentForm>

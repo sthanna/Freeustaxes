@@ -1,6 +1,6 @@
-import { State } from 'ustaxes/core/data'
-import StateForm from 'ustaxes/core/stateForms/Form'
-import { Either, left, right } from 'ustaxes/core/util'
+import { State } from 'freeustaxes/core/data'
+import StateForm from 'freeustaxes/core/stateForms/Form'
+import { Either, left, right } from 'freeustaxes/core/util'
 import F1040Base from './F1040Base'
 
 export enum StateFormError {

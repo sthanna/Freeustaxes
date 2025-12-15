@@ -2,8 +2,8 @@ import { Button, Grid, TextField } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { ReactElement, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { intentionallyFloat } from 'ustaxes/core/util'
-import { USTState } from 'ustaxes/redux/store'
+import { intentionallyFloat } from 'freeustaxes/core/util'
+import { USTState } from 'freeustaxes/redux/store'
 import anonymize from '../core/data/anonymize'
 
 const HelpAndFeedback = (): ReactElement => {
@@ -40,7 +40,7 @@ const HelpAndFeedback = (): ReactElement => {
       <h2>Help and Feedback</h2>
       <p>Did you notice something wrong?</p>
       <p>
-        Please email <strong>feedback@ustaxes.org</strong> with any questions or
+        Please email <strong>freeustaxes@gmail.com</strong> with any questions or
         bugs. If your personal data might be helpful, please copy paste the
         below into the body of the email. Your data below should be properly
         anonymized.

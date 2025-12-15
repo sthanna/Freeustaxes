@@ -1,5 +1,5 @@
 import F1040Attachment from './F1040Attachment'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 // TODO
 export default class ScheduleSE extends F1040Attachment {

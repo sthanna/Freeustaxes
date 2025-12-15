@@ -1,15 +1,15 @@
 import { fica } from '../data/federal'
 import F1040 from '../irsForms/F1040'
 import F8959 from '../irsForms/F8959'
-import Form from 'ustaxes/core/irsForms/Form'
+import Form from 'freeustaxes/core/irsForms/Form'
 import Schedule2 from '../irsForms/Schedule2'
 import Schedule3 from '../irsForms/Schedule3'
-import { displayRound } from 'ustaxes/core/irsForms/util'
+import { displayRound } from 'freeustaxes/core/irsForms/util'
 import { testKit, commonTests } from '.'
-import { FilingStatus, IncomeW2, PersonRole } from 'ustaxes/core/data'
-import { run } from 'ustaxes/core/util'
-import { blankState } from 'ustaxes/redux/reducer'
-import { ValidatedInformation } from 'ustaxes/forms/F1040Base'
+import { FilingStatus, IncomeW2, PersonRole } from 'freeustaxes/core/data'
+import { run } from 'freeustaxes/core/util'
+import { blankState } from 'freeustaxes/redux/reducer'
+import { ValidatedInformation } from 'freeustaxes/forms/F1040Base'
 import * as fc from 'fast-check'
 
 jest.setTimeout(10000)
@@ -175,18 +175,24 @@ describe('fica', () => {
         {
           ...sampleW2,
           personRole: PersonRole.SPOUSE,
-          ssWithholding: fica.maxSSTax
+          ssWithholding: fica.maxSSTax,
+          income: fica.maxIncomeSSTaxApplies,
+          ssWages: fica.maxIncomeSSTaxApplies
         },
         {
           ...sampleW2,
           personRole: PersonRole.SPOUSE,
           // This person has already contributed to the max for their other w2 so the refund should equal this amount
-          ssWithholding: 1000
+          ssWithholding: 1000,
+          income: 10000,
+          ssWages: 10000
         },
         {
           ...sampleW2,
           personRole: PersonRole.PRIMARY,
-          ssWithholding: fica.maxSSTax
+          ssWithholding: fica.maxSSTax,
+          income: fica.maxIncomeSSTaxApplies,
+          ssWages: fica.maxIncomeSSTaxApplies
         }
       ]
     }

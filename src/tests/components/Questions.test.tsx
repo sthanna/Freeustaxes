@@ -3,13 +3,13 @@
 import { ReactElement } from 'react'
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import Questions from 'ustaxes/components/Questions'
-import { InfoStore, createStoreUnpersisted } from 'ustaxes/redux/store'
-import { questions } from 'ustaxes/core/data/questions'
-import { PagerButtons, PagerContext } from 'ustaxes/components/pager'
-import { Information } from 'ustaxes/core/data'
-import { blankState } from 'ustaxes/redux/reducer'
-import TaxesStateMethods from 'ustaxes/redux/TaxesState'
+import Questions from 'freeustaxes/components/Questions'
+import { InfoStore, createStoreUnpersisted } from 'freeustaxes/redux/store'
+import { questions } from 'freeustaxes/core/data/questions'
+import { PagerButtons, PagerContext } from 'freeustaxes/components/pager'
+import { Information } from 'freeustaxes/core/data'
+import { blankState } from 'freeustaxes/redux/reducer'
+import TaxesStateMethods from 'freeustaxes/redux/TaxesState'
 
 afterEach(async () => {
   await waitFor(() => localStorage.clear())

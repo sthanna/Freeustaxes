@@ -1,9 +1,9 @@
 import { Fragment, ReactElement, ReactNode, useState } from 'react'
 import _ from 'lodash'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
 import { Helmet } from 'react-helmet'
 import { FormProvider, useForm, useFormContext } from 'react-hook-form'
-import { usePager } from 'ustaxes/components/pager'
+import { usePager } from 'freeustaxes/components/pager'
 import {
   IncomeW2,
   Person,
@@ -17,7 +17,7 @@ import {
   W2Box12Info,
   W2Box12Code,
   W2Box12CodeDescriptions
-} from 'ustaxes/core/data'
+} from 'freeustaxes/core/data'
 import {
   boxLabel,
   Currency,
@@ -25,18 +25,18 @@ import {
   GenericLabeledDropdown,
   LabeledInput,
   USStateDropDown
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { FormListContainer } from 'ustaxes/components/FormContainer'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { FormListContainer } from 'freeustaxes/components/FormContainer'
 import { Grid, Box, Button, Paper } from '@material-ui/core'
 import { Work } from '@material-ui/icons'
-import { addW2, editW2, removeW2 } from 'ustaxes/redux/actions'
+import { addW2, editW2, removeW2 } from 'freeustaxes/redux/actions'
 import { Alert } from '@material-ui/lab'
 import {
   enumKeys,
   parseFormNumber,
   parseFormNumberOrThrow
-} from 'ustaxes/core/util'
+} from 'freeustaxes/core/util'
 
 interface IncomeW2UserInput {
   employer?: Employer
@@ -197,9 +197,9 @@ export default function W2JobInfo(): ReactElement {
 
   const onSubmitEdit =
     (index: number) =>
-    (formData: IncomeW2UserInput): void => {
-      dispatch(editW2({ index, value: toIncomeW2(formData) }))
-    }
+      (formData: IncomeW2UserInput): void => {
+        dispatch(editW2({ index, value: toIncomeW2(formData) }))
+      }
 
   const w2sBlock = (
     <FormListContainer<IncomeW2UserInput>

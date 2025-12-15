@@ -4,5 +4,8 @@ module.exports = {
     alias: {
       ustaxes: path.resolve(__dirname, './src')
     }
+  },
+  eslint: {
+    enable: false
   }
 }

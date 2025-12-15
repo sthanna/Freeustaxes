@@ -1,4 +1,4 @@
-import { Information } from 'ustaxes/core/data'
+import { Information } from 'freeustaxes/core/data'
 import { YearsTaxesState } from './data'
 
 export default class TaxesStateMethods {

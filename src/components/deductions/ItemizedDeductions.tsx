@@ -1,15 +1,15 @@
 import { ReactElement, ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
 import { FormProvider, useForm } from 'react-hook-form'
-import { useDispatch, useSelector, TaxesState } from 'ustaxes/redux'
-import { setItemizedDeductions } from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
-import { LabeledInput, LabeledCheckbox } from 'ustaxes/components/input'
-import { ItemizedDeductions } from 'ustaxes/core/data'
-import { Patterns } from 'ustaxes/components/Patterns'
+import { useDispatch, useSelector, TaxesState } from 'freeustaxes/redux'
+import { setItemizedDeductions } from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
+import { LabeledInput, LabeledCheckbox } from 'freeustaxes/components/input'
+import { ItemizedDeductions } from 'freeustaxes/core/data'
+import { Patterns } from 'freeustaxes/components/Patterns'
 import { Grid, Box } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 interface ItemizedDeductionUserInput {
   medicalAndDental: string | number

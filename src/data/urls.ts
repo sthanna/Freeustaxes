@@ -38,6 +38,8 @@ const Urls = {
   Y2021: {
     credits: `/Y2021/credits`
   },
+  stateTaxes: '/state',
+  clean: '/clean',
   default: ''
 }
 

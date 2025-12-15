@@ -1,18 +1,18 @@
-import F1099Info from 'ustaxes/components/income/F1099Info'
+import F1099Info from 'freeustaxes/components/income/F1099Info'
 import { fireEvent, screen, waitFor, act } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import { InfoStore, createStoreUnpersisted } from 'ustaxes/redux/store'
-import { PagerButtons, PagerContext } from 'ustaxes/components/pager'
+import { InfoStore, createStoreUnpersisted } from 'freeustaxes/redux/store'
+import { PagerButtons, PagerContext } from 'freeustaxes/components/pager'
 import {
   FilingStatus,
   Income1099Type,
   Information,
   PersonRole,
   IncomeW2
-} from 'ustaxes/core/data'
-import { blankState } from 'ustaxes/redux/reducer'
+} from 'freeustaxes/core/data'
+import { blankState } from 'freeustaxes/redux/reducer'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'ustaxes/testUtil'
+import { renderWithProviders } from 'freeustaxes/testUtil'
 
 const testW2sSpouse: IncomeW2 = {
   employer: { EIN: '111111111', employerName: 'w2s employer name' },

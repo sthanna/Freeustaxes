@@ -14,7 +14,7 @@ import {
   createMigrate
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import { Asset, Information, TaxYear } from 'ustaxes/core/data'
+import { Asset, Information, TaxYear } from 'freeustaxes/core/data'
 import { blankYearTaxesState, YearsTaxesState } from '.'
 import { Actions } from './actions'
 import { PersistPartial } from 'redux-persist/es/persistReducer'
@@ -48,35 +48,35 @@ const dateKey = /(^date)|(Date)/
 
 const serializeDeserialize =
   (f: (d: Date | string) => Date | string) =>
-  (s: any): any => {
-    const recur = serializeDeserialize(f)
-    if (_.isArray(s)) {
-      return s.map((p) => recur(p))
-    } else if (_.isObject(s)) {
-      const ob = s as { [k: string]: any }
-      return Object.keys(ob).reduce((acc, k) => {
-        const newValue = (() => {
-          if (dateKey.exec(k) !== null) {
-            return f(ob[k] as Date | string)
-          }
-          return recur(ob[k])
-        })()
+    (s: any): any => {
+      const recur = serializeDeserialize(f)
+      if (_.isArray(s)) {
+        return s.map((p) => recur(p))
+      } else if (_.isObject(s)) {
+        const ob = s as { [k: string]: any }
+        return Object.keys(ob).reduce((acc, k) => {
+          const newValue = (() => {
+            if (dateKey.exec(k) !== null) {
+              return f(ob[k] as Date | string)
+            }
+            return recur(ob[k])
+          })()
 
-        return {
-          ...acc,
-          [k]: newValue
-        }
-      }, {})
-    } else {
-      return s
+          return {
+            ...acc,
+            [k]: newValue
+          }
+        }, {})
+      } else {
+        return s
+      }
     }
-  }
 
 /**
  * Look for all the Dates that need to be turned to strings
  */
 export const serializeTransform: (s: any) => any = serializeDeserialize((d) =>
-  (d as Date).toISOString()
+  d instanceof Date && !isNaN(d.getTime()) ? d.toISOString() : (d as string)
 )
 
 /**
@@ -120,7 +120,7 @@ const migrations = {
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 const persistedReducer = fsReducer(
-  'ustaxes_save.json',
+  'freeustaxes_save.json',
   persistReducer<CombinedState<YearsTaxesState>, Actions>(
     {
       key: 'root',

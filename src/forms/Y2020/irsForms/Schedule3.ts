@@ -1,9 +1,9 @@
-import { IncomeW2, PersonRole } from 'ustaxes/core/data'
-import { sumFields } from 'ustaxes/core/irsForms/util'
-import { FormTag } from 'ustaxes/core/irsForms/Form'
+import { IncomeW2, PersonRole } from 'freeustaxes/core/data'
+import { sumFields } from 'freeustaxes/core/irsForms/util'
+import { FormTag } from 'freeustaxes/core/irsForms/Form'
 import { fica } from '../data/federal'
 import F1040Attachment from './F1040Attachment'
-import { Field } from 'ustaxes/core/pdfFiller'
+import { Field } from 'freeustaxes/core/pdfFiller'
 
 export const claimableExcessSSTaxWithholding = (w2s: IncomeW2[]): number => {
   /* Excess FICA taxes are calculated per person. If an individual person

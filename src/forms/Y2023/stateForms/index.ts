@@ -1,7 +1,7 @@
 import F1040 from '../irsForms/F1040'
-import { State } from 'ustaxes/core/data'
-import StateForm from 'ustaxes/core/stateForms/Form'
-import { Either } from 'ustaxes/core/util'
+import { State } from 'freeustaxes/core/data'
+import StateForm from 'freeustaxes/core/stateForms/Form'
+import { Either } from 'freeustaxes/core/util'
 import { createStateReturn as createStateReturnF } from '../../StateForms'
 import { StateFormError } from '../../StateForms'
 

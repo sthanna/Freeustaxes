@@ -11,7 +11,7 @@ export type PDFDownloader = FileDownloader<PDFDocument>
 export const downloadPDF: PDFDownloader = async (url) => {
   const download = await fetch(url)
   const buffer = await download.arrayBuffer()
-  return await PDFDocument.load(buffer)
+  return await PDFDocument.load(buffer, { ignoreEncryption: true })
 }
 
 export const combinePdfs = async (

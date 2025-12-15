@@ -1,5 +1,5 @@
 import F1040 from '../F1040'
-import { Dependent } from 'ustaxes/core/data'
+import { Dependent } from 'freeustaxes/core/data'
 import * as federal from '../../data/federal'
 
 /**

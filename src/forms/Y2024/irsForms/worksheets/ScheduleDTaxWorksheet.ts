@@ -1,5 +1,5 @@
 // Reference implementation for Schedule D Tax Worksheet
-import { FilingStatus } from 'ustaxes/core/data'
+import { FilingStatus } from 'freeustaxes/core/data'
 import { computeOrdinaryTax } from '../../irsForms/TaxTable'
 
 export interface TestData {

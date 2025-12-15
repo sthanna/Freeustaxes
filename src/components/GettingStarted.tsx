@@ -1,141 +1,150 @@
 import { ReactElement } from 'react'
 import { Helmet } from 'react-helmet'
-import { Link, useMediaQuery } from '@material-ui/core'
-import { StartButtons, SingleButtons } from './pager'
-import { isWeb } from 'ustaxes/core/util'
+import { Link, Box, Typography, Button, Grid, Container } from '@material-ui/core'
+import LanguageIcon from '@material-ui/icons/Language'
+import MenuBookIcon from '@material-ui/icons/MenuBook'
+import AssignmentIcon from '@material-ui/icons/Assignment'
+import PeopleIcon from '@material-ui/icons/People'
+
+import Urls from 'freeustaxes/data/urls'
 
 const urls = {
-  repo: 'https://github.com/ustaxes/UsTaxes',
-  releases: 'https://github.com/ustaxes/UsTaxes/releases',
-  issues: 'https://github.com/ustaxes/ustaxes/issues',
-  twitter: 'https://twitter.com/ustaxesorg',
-  discord: 'https://discord.gg/dAaz472mPz',
-  aidan: 'https://github.com/thegrims',
-  zak: 'https://github.com/zakpatterson',
+  repo: 'https://github.com/sthanna/Freeustaxes',
+  issues: 'https://github.com/sthanna/Freeustaxes/issues',
   startPage: '/info'
 }
 
-const doubleButtons: ReactElement = (
-  <StartButtons
-    firstText={'Start Return In Browser'}
-    firstUrl={urls.startPage}
-    secondText={'Download Desktop Version'}
-    secondUrl={urls.releases}
-  />
-)
-const singleButtons: ReactElement = (
-  <SingleButtons text={'Start Return'} url={urls.startPage} />
-)
-
 export default function GettingStarted(): ReactElement {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-
   return (
     <>
       <Helmet>
-        <title>Getting Started | UsTaxes.org</title>
+        <title>FreeUStaxes | Your taxes, your control.</title>
       </Helmet>
-      <h1>UsTaxes.org</h1>
-      <p>
-        UsTaxes is an open source tax filing application that can be used to
-        file the Form 1040 United States individual income tax return and some
-        state individual income tax returns. UsTaxes is provided free of charge
-        and requires no sharing of personal data.
-      </p>
-      <p>
-        Interested in using UsTaxes? The income forms, return attachments,
-        credits, and states of residency are provided below.
-      </p>
-      <h2>Supported Income Forms</h2>
-      The following federal income forms are (mostly) supported:
-      <ul>
-        <li>W2</li>
-        <li>1099-INT</li>
-        <li>1099-DIV</li>
-        <li>1099-B</li>
-        <li>1098-E</li>
-        <li>
-          1099-R: support for normal distributions from IRA and pension
-          accounts.
-        </li>
-        <li>SSA-1099</li>
-      </ul>
-      UsTaxes can attach the following to your 1040:
-      <ul>
-        <li>Schedule 1 (as related to Schedule E and Schedule SE only)</li>
-        <li>Schedule 2</li>
-        <li>Schedule 3 (as related to excess FICA only)</li>
-        <li>Schedule 8812</li>
-        <li>Schedule A</li>
-        <li>Schedule B</li>
-        <li>Schedule D</li>
-        <li>Schedule E</li>
-        <li>Schedule SE</li>
-        <li>F1040-V</li>
-        <li>F6251 (AMT; only supports exercise of incentive stock options)</li>
-        <li>F8889 (Health Savings Accounts)</li>
-        <li>F8949 (Uncovered Investment Transactions)</li>
-        <li>F8959 (Additional Medicare Tax)</li>
-        <li>F8960 (Net Investment Income Tax)</li>
-        <li>F8995/F8995-A (Qualified Business Income Deduction)</li>
-      </ul>
-      These federal income tax credits are supported:
-      <ul>
-        <li>Credit for Children and Other Dependents</li>
-        <li>Earned Income Tax Credit</li>
-      </ul>
-      <h2>State Income Tax</h2>
-      Note the following states have no income tax filing:
-      <ul>
-        <li>Alaska</li>
-        <li>Tennessee</li>
-        <li>Wyoming</li>
-        <li>Florida</li>
-        <li>New Hampshire</li>
-        <li>South Dakota</li>
-        <li>Texas</li>
-        <li>Washington</li>
-        <li>Nevada</li>
-      </ul>
-      <p>
-        <strong>9</strong>/50 states are supported. If your types of income and
-        state residency are supported, you should be able to use UsTaxes to
-        paper file your return!
-      </p>
-      <h2>Get Started</h2>
-      {isWeb() ? doubleButtons : singleButtons}
-      <h2>Get Involved!</h2>
-      <p>
-        The success of this project depends on user feedback. If you notice any
-        issues at all with the project, please reach out to us!
-      </p>
-      <ul>
-        <li>
-          File an issue: <Link href={urls.issues}>GitHub Issues</Link>
-        </li>
-        <li>
-          Message us on <Link href={urls.twitter}>Twitter</Link>
-        </li>
-        <li>
-          Think you have something to contribute? Come to our{' '}
-          <Link href={urls.discord}>Discord channel</Link>.
-        </li>
-      </ul>
-      <p>
-        UsTaxes is an open source project maintained by{' '}
-        <Link href={urls.aidan}>Aidan Grimshaw</Link> and{' '}
-        <Link href={urls.zak}>Zak Patterson</Link>.
-      </p>
-      <p>
-        Contributions to the <Link href={urls.repo}>GitHub</Link> repository are
-        welcome.
-      </p>
-      <a href="https://www.netlify.com">
-        <img
-          src={prefersDarkMode ? 'netlify-dark.svg' : 'netlify-light.svg'}
-          alt="Deploys by Netlify"
-        />
-      </a>
+
+      {/* Hero Section */}
+      <Box style={{
+        background: 'transparent',
+        padding: '4rem 0',
+        textAlign: 'left',
+        marginBottom: '2rem',
+        position: 'relative'
+      }}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={5}>
+            <Box style={{ width: '50px', height: '4px', background: '#A0BFA3', marginBottom: '1.5rem' }} />
+            <Typography variant="h2" style={{ marginBottom: '1rem', color: '#1E3D4A', fontFamily: 'Merriweather, serif', fontSize: '2.8rem', lineHeight: 1.2 }}>
+              Your taxes,<br />
+              your control.<br />
+              File freely.
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              href={Urls.taxPayer.info}
+              style={{
+                fontSize: '1rem',
+                padding: '12px 32px',
+                borderRadius: '50px',
+                marginTop: '1.5rem',
+                boxShadow: '0 10px 20px rgba(232, 143, 122, 0.3)'
+              }}
+            >
+              Start My Filing Journey
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={7} style={{ display: 'flex', justifyContent: 'center' }}>
+            {/* Abstract Community Illustration */}
+            {/* Hero Illustration */}
+            <Box style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+              <img
+                src="/img/hero.png"
+                alt="Community Powered Tax Filing"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '600px',
+                  objectFit: 'contain',
+                  mixBlendMode: 'multiply'
+                }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Features Section */}
+      <Container maxWidth="lg" style={{ marginBottom: '6rem' }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={4}>
+            <Box style={{
+              background: 'white',
+              borderRadius: '24px',
+              padding: '2rem',
+              textAlign: 'center',
+              boxShadow: '0 10px 40px -10px rgba(0,0,0,0.05)',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}>
+              <PeopleIcon style={{ fontSize: '48px', color: '#1E3D4A', marginBottom: '1.5rem' }} />
+              <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#1E3D4A' }}>Community-Driven</Typography>
+              <Typography variant="body1" style={{ color: '#546e7a' }}>Built by the people, for the people.</Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box style={{
+              background: 'white',
+              borderRadius: '24px',
+              padding: '2rem',
+              textAlign: 'center',
+              boxShadow: '0 10px 40px -10px rgba(0,0,0,0.05)',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}>
+              <MenuBookIcon style={{ fontSize: '48px', color: '#1E3D4A', marginBottom: '1.5rem' }} />
+              <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#1E3D4A' }}>Transparent & Open</Typography>
+              <Typography variant="body1" style={{ color: '#546e7a' }}>Open source code you can trust.</Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box style={{
+              background: 'white',
+              borderRadius: '24px',
+              padding: '2rem',
+              textAlign: 'center',
+              boxShadow: '0 10px 40px -10px rgba(0,0,0,0.05)',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}>
+              <AssignmentIcon style={{ fontSize: '48px', color: '#1E3D4A', marginBottom: '1.5rem' }} />
+              <Typography variant="h6" style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#1E3D4A' }}>Simple, User-Focused</Typography>
+              <Typography variant="body1" style={{ color: '#546e7a' }}>Designed for clarity and ease of use.</Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* Footer / Links */}
+      <Box style={{ textAlign: 'center', marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #e0e0e0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '2rem' }}>
+        <Typography variant="h6" style={{ fontWeight: 700, color: '#1E3D4A', display: 'flex', alignItems: 'center' }}>
+          <Box component="span" style={{ marginRight: '8px', display: 'inline-block', width: '10px', height: '10px', borderRadius: '50%', background: '#1E3D4A' }}></Box> FreeUStaxes
+        </Typography>
+        <Box>
+          <Link href={urls.repo} style={{ margin: '0 1rem', fontWeight: 600, color: '#1E3D4A' }}>How it Works</Link>
+          <Link href={urls.issues} style={{ margin: '0 1rem', fontWeight: 600, color: '#1E3D4A' }}>Community</Link>
+          <Link href={urls.repo} style={{ margin: '0 1rem', fontWeight: 600, color: '#1E3D4A' }}>Contribute</Link>
+        </Box>
+      </Box>
     </>
   )
 }

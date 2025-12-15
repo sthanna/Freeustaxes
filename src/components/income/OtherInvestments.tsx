@@ -1,24 +1,24 @@
 import { ReactElement, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm, FormProvider } from 'react-hook-form'
-import { useDispatch, YearsTaxesState } from 'ustaxes/redux'
+import { useDispatch, YearsTaxesState } from 'freeustaxes/redux'
 import { useSelector } from 'react-redux'
-import { addAsset } from 'ustaxes/redux/actions'
-import { usePager } from 'ustaxes/components/pager'
-import { Asset, AssetType, State, TaxYears } from 'ustaxes/core/data'
+import { addAsset } from 'freeustaxes/redux/actions'
+import { usePager } from 'freeustaxes/components/pager'
+import { Asset, AssetType, State, TaxYears } from 'freeustaxes/core/data'
 import {
   GenericLabeledDropdown,
   USStateDropDown,
   LabeledInput
-} from 'ustaxes/components/input'
-import { Patterns } from 'ustaxes/components/Patterns'
-import { OpenableFormContainer } from 'ustaxes/components/FormContainer'
+} from 'freeustaxes/components/input'
+import { Patterns } from 'freeustaxes/components/Patterns'
+import { OpenableFormContainer } from 'freeustaxes/components/FormContainer'
 import { Grid } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import { TransactionImporter } from './assets/TransactionImporter'
 import FilteredAssetsTable from './assets/FilteredAssetsTable'
 import { DatePicker } from '../input/DatePicker'
-import { intentionallyFloat } from 'ustaxes/core/util'
+import { intentionallyFloat } from 'freeustaxes/core/util'
 
 const showAssetType = (p: AssetType) => {
   switch (p) {

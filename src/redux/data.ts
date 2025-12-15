@@ -1,4 +1,4 @@
-import { Asset, Information, Person, TaxYear } from 'ustaxes/core/data'
+import { Asset, Information, Person, TaxYear } from 'freeustaxes/core/data'
 import { blankState } from './reducer'
 
 /**
